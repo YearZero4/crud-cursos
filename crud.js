@@ -1,9 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const PORT = 3011;
 
 // curl -X POST http://localhost:3011/usuarios -H "Content-Type: application/json" -d "{\"name\": \"Juan Perez\", \"date\": \"2023-10-15\", \"link\": \"https://ejemplo.com\", \"photo\": \"ddd.img\"} //
-
+app.use(cors());
 app.use(express.json());
 let usuarios = []; 
 app.get('/usuarios', (req, res) => res.json(usuarios)); 
